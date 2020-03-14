@@ -7,6 +7,9 @@ PWD_build=~/work/build-openwrt/build-openwrt
 cp -r $PWD_build/files .
 
 ls /dev
-sudo mount -o remount,noatime,nobarrier,data=writeback,defaults /dev/sda /
+df -h
+lsblk
+blkid -p
+#sudo mount -o remount,noatime,nobarrier,data=writeback,defaults /dev/sda /
 
 make defconfig
