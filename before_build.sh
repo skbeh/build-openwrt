@@ -8,4 +8,7 @@ cp -r $PWD_build/files .
 #Smartdns
 cp -r $PWD_build/smartdns package/network/services/
 
+cat /etc/fstab
+#mount -o remount,noatime,nobarrier,data=writeback,defaults /dev/sdb /
+
 make defconfig
