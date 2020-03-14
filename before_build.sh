@@ -5,10 +5,8 @@ cd /home/runner/openwrt
 # echo "Start build!"
 PWD_build=~/work/build-openwrt/build-openwrt
 cp -r $PWD_build/files .
-#Smartdns
-cp -r $PWD_build/smartdns package/network/services/
 
 cat /etc/fstab
-#mount -o remount,noatime,nobarrier,data=writeback,defaults /dev/sdb /
+mount -o remoiunt,noatime,nobarrier,data=writeback,defaults /dev/sda /
 
 make defconfig
