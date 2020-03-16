@@ -6,6 +6,4 @@ cd /home/runner/openwrt
 PWD_build=~/work/build-openwrt/build-openwrt
 cp -r $PWD_build/files .
 
-sudo mount -o remount,noatime,nobarrier,data=writeback,defaults /dev/sda /
-
 make defconfig

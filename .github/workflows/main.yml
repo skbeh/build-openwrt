@@ -24,6 +24,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
+        sudo mount -o remount,noatime,nobarrier,data=writeback,defaults /dev/sda /
         docker rmi $(docker images -q)
         sudo -E swapoff /swapfile
         sudo -E rm -rf /swapfile /usr/share/dotnet /usr/local/lib/android /opt/ghc
