@@ -24,10 +24,10 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo mount -o remount,noatime,nobarrier,data=writeback,defaults /dev/sda /
         docker rmi $(docker images -q)
         sudo -E swapoff /swapfile
         sudo -E rm -rf /swapfile /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo mount -o remount,noatime,nobarrier,data=writeback,defaults /dev/sda /
         sudo -E apt-get remove -y --purge azure-cli ghc zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* mssql-tools msodbcsql17
         sudo -E apt-get update -y
         sudo -E apt-get full-upgrade -y
