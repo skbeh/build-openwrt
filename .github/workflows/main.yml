@@ -41,7 +41,6 @@ jobs:
         sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php
     - name: Clone source
       run: |
-        sudo mount -o remount,noatime,nobarrier,data=writeback,defaults /dev/sda /
         cd /home/runner
         git clone https://github.com/project-openwrt/openwrt.git
         sudo chown -R runner:runner openwrt
