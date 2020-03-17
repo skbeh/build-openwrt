@@ -39,7 +39,6 @@ jobs:
         sudo -E apt-get autoremove -y --purge
         sudo -E apt-get clean -y
         sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php
-        sudo mount -o remount,noatime,nobarrier,data=writeback,defaults /dev/sda /
     - name: Clone source
       run: |
         cd /home/runner
