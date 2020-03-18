@@ -20,6 +20,13 @@ jobs:
     steps:
     - name: Clone Repository
       uses: actions/checkout@v1
+      run: |
+        sudo mount -o remount,noatime,nobarrier,data=writeback,defaults /dev/sda1 /
+        cat /sys/block/sda1/queue/scheduler
+        cat /proc/sys/vm/dirty_expire_centiseconds
+        cat /proc/sys/vm/dirty_writeback_centisecs
+        cat /proc/sys/vm/dirty_background_ratio
+        cat /proc/sys/vm/dirty_ratio
     - name: Init build dependencies
       env:
         DEBIAN_FRONTEND: noninteractive
