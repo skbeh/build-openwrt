@@ -20,8 +20,7 @@ jobs:
     steps:
     - name: Optimization IO
       run: |
-        sudo umount -f /
-        sudo mount -o noatime,nobarrier,data=writeback,defaults /dev/sda1 /
+        sudo mount --force -o remount,noatime,nobarrier,data=writeback,defaults /dev/sda1 /
         cat /sys/block/sda1/queue/scheduler
         cat /proc/sys/vm/dirty_expire_centiseconds
         cat /proc/sys/vm/dirty_writeback_centisecs
