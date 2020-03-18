@@ -18,14 +18,6 @@ jobs:
 #    timeout-minutes: 360
 
     steps:
-    - name: Optimization IO
-      run: |
-        sudo mount -o remount,noatime,nobarrier,data=writeback,defaults /
-        cat /sys/block/sda/queue/scheduler
-        cat /proc/sys/vm/dirty_expire_centiseconds
-        cat /proc/sys/vm/dirty_writeback_centisecs
-        cat /proc/sys/vm/dirty_background_ratio
-        cat /proc/sys/vm/dirty_ratio
     - name: Clone Repository
       uses: actions/checkout@v1
     - name: Init build dependencies
